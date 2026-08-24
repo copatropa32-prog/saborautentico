@@ -15,11 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #962d22; /* Vermelho escuro corporativo idêntico ao modelo */
+            --primary: #962d22; /* Vermelho escuro corporativo */
             --primary-hover: #7b231b;
-            --accent: #d4af37;
+            --accent: #d4af37; /* Dourado elegante */
+            --accent-hover: #b8972e;
             --dark: #2c3e50;
-            --light: #f9f9f9;
+            --light: #f8f9fa;
             --white: #ffffff;
         }
 
@@ -31,19 +32,20 @@
             background-color: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 8px 15px;
+            padding: 10px 15px;
             font-size: 0.85rem;
             font-weight: 500;
             letter-spacing: 0.5px;
         }
 
-        /* Cabeçalho Principal com Menu */
+        /* Cabeçalho Profissional com Logotipo Maior */
         header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .header-container {
@@ -56,84 +58,129 @@
         }
 
         .logo-container img {
-            height: 65px;
+            height: 90px; /* LOGOTIPO MAIOR E DESTAQUE NO TOPO */
             width: auto;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.02);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
             align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--primary);
+            color: var(--dark);
             font-weight: 600;
             font-size: 0.95rem;
             transition: 0.3s;
+            position: relative;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
-        /* Seção Hero */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-whatsapp {
+            background-color: #25d366 !important;
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: 0.3s !important;
+        }
+
+        .nav-whatsapp:hover {
+            background-color: #1ebe5d !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .nav-whatsapp::after { display: none !important; }
+
+        /* Seção Hero de Alta Conversão */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #b5382b 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1f18 100%);
             color: var(--white);
-            padding: 80px 20px;
+            padding: 90px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            overflow: hidden;
-            text-align: left;
         }
 
         .hero-content {
             max-width: 1200px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
             align-items: center;
         }
 
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            line-height: 1.7;
         }
 
+        /* Botões Profissionais Aprimorados */
         .btn-main {
             display: inline-block;
-            background-color: var(--white);
-            color: var(--primary);
-            padding: 14px 30px;
-            border-radius: 4px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 0.95rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--accent);
         }
 
         .btn-main:hover {
-            background-color: var(--accent);
-            color: var(--white);
-            transform: translateY(-2px);
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
         }
 
         .hero-images {
@@ -144,22 +191,27 @@
 
         .hero-images img {
             width: 100%;
-            height: 180px;
+            height: 190px;
             object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255,255,255,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-images img:hover {
+            transform: scale(1.03);
         }
 
         /* Títulos de Seção */
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 800;
             color: var(--primary);
-            margin: 60px 0 10px 0;
+            margin: 70px 0 10px 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .section-title span {
@@ -167,46 +219,48 @@
         }
 
         .divider {
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary);
-            margin: 0 auto 40px auto;
+            width: 90px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0 auto 50px auto;
+            border-radius: 2px;
         }
 
-        /* Grade de Categorias (Nossas Linhas) */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px 20px; }
+        /* Grade de Categorias */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px 20px; }
 
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .category-card {
             position: relative;
-            height: 320px;
-            border-radius: 10px;
+            height: 350px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             display: flex;
             align-items: flex-end;
-            padding: 25px;
+            padding: 30px;
             text-decoration: none;
             background-size: cover;
             background-position: center;
-            transition: 0.3s;
+            transition: all 0.4s ease;
         }
 
         .category-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(150, 45, 34, 0.9) 0%, rgba(0,0,0,0.1) 70%);
+            background: linear-gradient(to top, rgba(150, 45, 34, 0.92) 0%, rgba(0,0,0,0.15) 75%);
+            transition: background 0.3s ease;
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(150, 45, 34, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(150, 45, 34, 0.35);
         }
 
         .category-content {
@@ -218,65 +272,71 @@
         }
 
         .category-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-card {
             display: inline-block;
+            background-color: transparent;
             border: 2px solid var(--white);
             color: var(--white);
-            padding: 6px 18px;
-            border-radius: 4px;
+            padding: 8px 22px;
+            border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .category-card:hover .btn-card {
-            background-color: var(--white);
-            color: var(--primary);
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
         }
 
         /* Seção História / Sobre */
         .history-section {
             background-color: var(--light);
-            padding: 70px 20px;
-            margin-top: 40px;
+            padding: 80px 20px;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
         }
 
         .history-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
             align-items: center;
         }
 
         .history-box {
-            background: var(--primary);
-            color: var(--white);
-            padding: 45px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            background: var(--white);
+            color: var(--dark);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+            border-left: 6px solid var(--primary);
         }
 
         .history-box h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 20px;
+            color: var(--primary);
             text-transform: uppercase;
         }
 
         .history-box p {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            opacity: 0.95;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #555;
         }
 
         .history-logo {
@@ -284,16 +344,16 @@
         }
 
         .history-logo img {
-            max-width: 280px;
+            max-width: 320px;
             width: 100%;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.1));
         }
 
-        /* Estatísticas */
+        /* Barra de Estatísticas */
         .stats-bar {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, #6d1f18 100%);
             color: var(--white);
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
@@ -302,52 +362,54 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .stat-item h3 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
             color: var(--accent);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .stat-item p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             text-transform: uppercase;
             font-weight: 600;
             letter-spacing: 0.5px;
+            opacity: 0.9;
         }
 
         /* Botão Flutuante WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            left: 25px;
+            bottom: 30px;
+            left: 30px;
             background-color: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 35px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             z-index: 9999;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         }
 
         /* Rodapé */
         footer {
             background-color: #1a252f;
             color: var(--white);
-            padding: 50px 20px 20px 20px;
+            padding: 60px 20px 20px 20px;
             text-align: center;
         }
 
@@ -357,24 +419,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 30px;
+            padding-bottom: 40px;
         }
 
         .footer-logo img {
-            height: 70px;
+            height: 80px;
             filter: brightness(0) invert(1);
         }
 
         .footer-info {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #bdc3c7;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .footer-bottom {
-            padding-top: 20px;
+            padding-top: 25px;
             font-size: 0.85rem;
             color: #7f8c8d;
         }
@@ -382,10 +444,11 @@
         /* Responsivo para celulares */
         @media (max-width: 768px) {
             .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-text h1 { font-size: 2.2rem; }
+            .hero-text h1 { font-size: 2.3rem; }
             .hero-images { display: none; }
             .history-container { grid-template-columns: 1fr; }
-            nav ul { display: none; } /* Pode ser expandido com menu mobile se desejar */
+            nav ul { display: none; }
+            .logo-container img { height: 70px; }
         }
     </style>
 </head>
@@ -396,18 +459,20 @@
         📧 contato@saborautentico.com.br | 📱 WhatsApp: (11) 92005-8017
     </div>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho com Logotipo Destacado -->
     <header>
         <div class="header-container">
             <div class="logo-container">
-                <img src="logotiposaborautentico.png" alt="Sabor Autêntico Logo">
+                <a href="index.html">
+                    <img src="logotiposaborautentico.png" alt="Sabor Autêntico Logo">
+                </a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" style="color: #25d366;">WhatsApp</a></li>
+                    <li><a href="produtos.html">Catálogo Completo</a></li>
+                    <li><a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" class="nav-whatsapp">💬 WhatsApp</a></li>
                 </ul>
             </nav>
         </div>
@@ -417,12 +482,12 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>O Verdadero Sabor Artesanal Para Sua Mesa e Seu Comércio!</h1>
-                <p>Salgados fritos, assados e kits festa preparados com ingredientes selecionados, padrão de excelência e muito carinho.</p>
-                <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20conhecer%20os%20produtos." class="btn-main" target="_blank">Conheça Nossos Produtos &darr;</a>
+                <h1>O Verdadeiro Sabor Artesanal Para Sua Mesa e Seu Comércio!</h1>
+                <p>Salgados fritos, assados, folhados e kits festa preparados com ingredientes selecionados, altíssimo padrão de excelência e muito carinho.</p>
+                <a href="produtos.html" class="btn-main">Ver Catálogo Completo &rarr;</a>
             </div>
             <div class="hero-images">
-                <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500&q=80" alt="Salgados">
+                <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500&q=80" alt="Salgados Fritos">
                 <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80" alt="Coxinha">
                 <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=500&q=80" alt="Salgados Assados">
                 <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=80" alt="Lanches">
@@ -430,37 +495,37 @@
         </div>
     </section>
 
-    <!-- Nossas Linhas / Produtos -->
+    <!-- Nossas Linhas -->
     <div id="produtos" class="container">
         <h2 class="section-title">Nossas <span>Linhas</span></h2>
         <div class="divider"></div>
 
         <div class="categories-grid">
-            <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20ver%20os%20salgados%20assados." class="category-card" style="background-image: url('https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=600&q=80');" target="_blank">
+            <a href="produtos.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=600&q=80');">
                 <div class="category-content">
                     <h3>Salgados Assados</h3>
-                    <span class="btn-card">Ver Produtos</span>
+                    <span class="btn-card">Explorar Linha</span>
                 </div>
             </a>
 
-            <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20ver%20os%20salgados%20fritos." class="category-card" style="background-image: url('https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=600&q=80');" target="_blank">
+            <a href="produtos.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=600&q=80');">
                 <div class="category-content">
                     <h3>Salgados Fritos</h3>
-                    <span class="btn-card">Ver Produtos</span>
+                    <span class="btn-card">Explorar Linha</span>
                 </div>
             </a>
 
-            <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20ver%20os%20kits%20festa." class="category-card" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80');" target="_blank">
+            <a href="produtos.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80');">
                 <div class="category-content">
                     <h3>Kits Festa</h3>
-                    <span class="btn-card">Ver Produtos</span>
+                    <span class="btn-card">Explorar Linha</span>
                 </div>
             </a>
 
-            <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20ver%20os%20congelados." class="category-card" style="background-image: url('https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80');" target="_blank">
+            <a href="produtos.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80');">
                 <div class="category-content">
                     <h3>Congelados & Atacado</h3>
-                    <span class="btn-card">Ver Produtos</span>
+                    <span class="btn-card">Explorar Linha</span>
                 </div>
             </a>
         </div>
@@ -470,9 +535,9 @@
     <section id="sobre" class="history-section">
         <div class="history-container">
             <div class="history-box">
-                <h2>Um Pouco da Nossa História</h2>
-                <p>O <strong>Sabor Autêntico</strong> nasceu com o propósito de levar qualidade incomparável e sabor caseiro para festas, reuniões em família e estabelecimentos comerciais. Cada receita é desenvolvida com rigorosos padrões de higiene e ingredientes de altíssima qualidade.</p>
-                <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento." class="btn-main" target="_blank">Saiba Mais</a>
+                <h2>Tradição e Qualidade em Cada Salgado</h2>
+                <p>O <strong>Sabor Autêntico</strong> nasceu com o propósito de levar qualidade incomparável e sabor caseiro genuíno para festas, reuniões em família e estabelecimentos comerciais. Cada receita é desenvolvida com rigorosos padrões de higiene, ingredientes seletos e muito compromisso com o cliente.</p>
+                <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20falar%20com%20o%20atendimento." class="btn-main" target="_blank">Fale Conosco</a>
             </div>
             <div class="history-logo">
                 <img src="logotiposaborautentico.png" alt="Sabor Autêntico Logo Grande">
