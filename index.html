@@ -67,7 +67,7 @@
         
         .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
         
-        /* Botões Padronizados com Altura Automática e Quebra de Linha Segura para Mobile */
+        /* Botões Padronizados com Altura Automática e Quebra de Linha Segura */
         .btn-primary { 
             background-color: var(--accent); 
             color: var(--dark); 
@@ -113,7 +113,7 @@
         .highlights h2 { font-size: 2.2rem; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 10px; }
         .highlights > p { color: #666; margin-bottom: 40px; font-size: 1.05rem; }
         
-        .grid-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left; }
+        .grid-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: left; }
         .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.06); border: 1px solid #eaeaea; display: flex; flex-direction: column; }
         .card img { width: 100%; height: 230px; object-fit: cover; border-bottom: 3px solid var(--primary); }
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -157,12 +157,52 @@
             </div>
         </footer>
 
-        /* Responsivo */
+        /* --- AJUSTE FINO PARA MOBILE --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.1rem; }
+            .top-bar { font-size: 0.75rem; padding: 8px 10px; }
+            .header-container { padding: 12px 15px; }
+            .logo-container img { height: 65px; }
+            .brand-title { font-size: 1.15rem; }
+            .brand-subtitle { font-size: 0.75rem; }
             nav ul { display: none; }
-            .logo-container img { height: 75px; }
-            .brand-title { font-size: 1.2rem; }
+
+            .hero { padding: 50px 15px; }
+            .hero h1 { font-size: 1.9rem; margin-bottom: 15px; }
+            .hero p { font-size: 1.05rem; margin-bottom: 25px; }
+            
+            .hero-buttons { flex-direction: column; width: 100%; gap: 12px; }
+            .hero-buttons a { width: 100%; }
+
+            .highlights { padding: 50px 15px; }
+            .highlights h2 { font-size: 1.8rem; }
+            .highlights > p { font-size: 0.95rem; margin-bottom: 30px; }
+            .grid-highlights { gap: 20px; }
+
+            .card-body { padding: 20px; }
+            .card-body h3 { font-size: 1.2rem; }
+            
+            /* Botões dos cards e botões gerais no mobile com padding confortável e seguro */
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 12px 20px !important;
+                font-size: 0.95rem !important;
+            }
+
+            .center-btn { margin-top: 35px; }
+            .center-btn a { width: 100%; padding: 14px 20px !important; font-size: 1rem !important; }
+
+            .reseller-section { padding: 55px 15px; }
+            .reseller-section h2 { font-size: 1.8rem; }
+            .reseller-section p { font-size: 0.98rem; margin-bottom: 25px; }
+
+            .about { padding: 55px 15px; }
+            .about h2 { font-size: 1.8rem; }
+            .about p { font-size: 0.98rem; }
+
+            .whatsapp-float { width: 55px; height: 55px; font-size: 30px; bottom: 20px; left: 20px; }
+            
+            footer { padding: 40px 15px 20px 15px; }
+            .footer-info { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -221,7 +261,7 @@
                 <div class="card-body">
                     <h3>Coxinha de Carne Seca</h3>
                     <p>Massa crocante e recheio farto de carne seca desfiada de primeira com toque cremoso de requeijão.</p>
-                    <a href="produtos.html" class="btn-primary" style="padding: 10px; font-size: 0.9rem;">Ver no Catálogo</a>
+                    <a href="produtos.html" class="btn-primary">Ver no Catálogo</a>
                 </div>
             </div>
 
@@ -231,7 +271,7 @@
                 <div class="card-body">
                     <h3>Bolinho de Queijo</h3>
                     <p>O clássico favorito das lanchonetes. Muito queijo derretido e massa sequinha e dourada.</p>
-                    <a href="produtos.html" class="btn-primary" style="padding: 10px; font-size: 0.9rem;">Ver no Catálogo</a>
+                    <a href="produtos.html" class="btn-primary">Ver no Catálogo</a>
                 </div>
             </div>
 
@@ -241,14 +281,14 @@
                 <div class="card-body">
                     <h3>Hambúrguer de Cheddar</h3>
                     <p>Sucesso absoluto de vendas! Carne suculenta combinada com creme de cheddar cremoso.</p>
-                    <a href="produtos.html" class="btn-primary" style="padding: 10px; font-size: 0.9rem;">Ver no Catálogo</a>
+                    <a href="produtos.html" class="btn-primary">Ver no Catálogo</a>
                 </div>
             </div>
 
         </div>
 
         <div class="center-btn">
-            <a href="produtos.html" class="btn-primary" style="font-size: 1.1rem; padding: 15px 35px;">📦 Ver Todos os Salgados do Catálogo</a>
+            <a href="produtos.html" class="btn-primary">📦 Ver Todos os Salgados do Catálogo</a>
         </div>
     </section>
 
@@ -257,7 +297,7 @@
         <div class="reseller-container">
             <h2>Seja um de Nossos Revendedores</h2>
             <p>Quer aumentar o faturamento do seu estabelecimento? Fornecemos salgados artesanais congelados de excelente aceitação para padarias, lanchonetes, cantinas e comércios em geral. Tenha margens excelentes e produtos de qualidade superior para fidelizar seus clientes.</p>
-            <a href="https://wa.me/5511920058017?text=Olá!%20Tenho%20interesse%20em%20ser%20revendedor%20dos%20salgados%20Sabor%20Autêntico." class="btn-secondary" target="_blank" style="font-size: 1.1rem; padding: 15px 35px; display: inline-flex;">🤝 Quero Revender no Meu Comércio</a>
+            <a href="https://wa.me/5511920058017?text=Olá!%20Tenho%20interesse%20em%20ser%20revendedor%20dos%20salgados%20Sabor%20Autêntico." class="btn-secondary" target="_blank">🤝 Quero Revender no Meu Comércio</a>
         </div>
     </section>
 
