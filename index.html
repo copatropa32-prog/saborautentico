@@ -33,14 +33,14 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--white); color: var(--dark); line-height: 1.6; }
+        body { background-color: var(--white); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 
         /* Barra Superior */
         .top-bar { background-color: var(--primary); color: var(--white); text-align: center; padding: 10px 15px; font-size: 0.85rem; font-weight: 500; }
 
         /* Cabeçalho */
-        header { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        header { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; width: 100%; }
         
         .logo-brand-wrapper { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .logo-container img { height: 110px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
@@ -138,50 +138,38 @@
         .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); z-index: 9999; transition: all 0.3s ease; text-decoration: none; }
         .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
 
-        /* Rodapé */
-        <footer>
-            <div class="footer-content">
-                <div class="footer-logo-container">
-                    <div class="footer-logo">
-                        <img src="logotiposaborautentico.png" alt="Sabor Autêntico">
-                    </div>
-                </div>
-                <div class="footer-info">
-                    <p><strong>Sabor Autêntico - Salgados Artesanais e Distribuição</strong></p>
-                    <p>Telefone / WhatsApp: (11) 92005-8017 | E-mail: contato@saborautentico.com.br</p>
-                    <p>Atendimento e Entregas em todo o ABCD da Grande São Paulo.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Sabor Autêntico. Todos os direitos reservados.</p>
-            </div>
-        </footer>
+        /* Rodapé Estilos */
+        footer { background-color: #1a252f; color: var(--white); padding: 60px 20px 25px 20px; text-align: center; width: 100%; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; }
+        .footer-logo-container { background-color: var(--white); padding: 12px 28px; border-radius: 12px; display: inline-block; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .footer-logo img { height: 75px; width: auto; object-fit: contain; }
+        .footer-info { font-size: 0.95rem; color: #bdc3c7; line-height: 1.8; }
+        .footer-bottom { padding-top: 25px; font-size: 0.85rem; color: #7f8c8d; }
 
         /* --- AJUSTE FINO PARA MOBILE --- */
         @media (max-width: 768px) {
-            .top-bar { font-size: 0.75rem; padding: 8px 10px; }
-            .header-container { padding: 12px 15px; }
-            .logo-container img { height: 65px; }
-            .brand-title { font-size: 1.15rem; }
-            .brand-subtitle { font-size: 0.75rem; }
+            .top-bar { font-size: 0.75rem; padding: 8px 10px; line-height: 1.4; }
+            .header-container { padding: 12px 15px; width: 100%; }
+            .logo-container img { height: 60px; }
+            .brand-title { font-size: 1.1rem; }
+            .brand-subtitle { font-size: 0.7rem; }
             nav ul { display: none; }
 
             .hero { padding: 50px 15px; }
-            .hero h1 { font-size: 1.9rem; margin-bottom: 15px; }
-            .hero p { font-size: 1.05rem; margin-bottom: 25px; }
+            .hero h1 { font-size: 1.8rem; margin-bottom: 15px; }
+            .hero p { font-size: 1rem; margin-bottom: 25px; }
             
             .hero-buttons { flex-direction: column; width: 100%; gap: 12px; }
             .hero-buttons a { width: 100%; }
 
             .highlights { padding: 50px 15px; }
-            .highlights h2 { font-size: 1.8rem; }
+            .highlights h2 { font-size: 1.7rem; }
             .highlights > p { font-size: 0.95rem; margin-bottom: 30px; }
             .grid-highlights { gap: 20px; }
 
             .card-body { padding: 20px; }
-            .card-body h3 { font-size: 1.2rem; }
+            .card-body h3 { font-size: 1.15rem; }
             
-            /* Botões dos cards e botões gerais no mobile com padding confortável e seguro */
             .btn-primary, .btn-secondary {
                 width: 100%;
                 padding: 12px 20px !important;
@@ -192,12 +180,12 @@
             .center-btn a { width: 100%; padding: 14px 20px !important; font-size: 1rem !important; }
 
             .reseller-section { padding: 55px 15px; }
-            .reseller-section h2 { font-size: 1.8rem; }
-            .reseller-section p { font-size: 0.98rem; margin-bottom: 25px; }
+            .reseller-section h2 { font-size: 1.7rem; }
+            .reseller-section p { font-size: 0.95rem; margin-bottom: 25px; }
 
             .about { padding: 55px 15px; }
-            .about h2 { font-size: 1.8rem; }
-            .about p { font-size: 0.98rem; }
+            .about h2 { font-size: 1.7rem; }
+            .about p { font-size: 0.95rem; }
 
             .whatsapp-float { width: 55px; height: 55px; font-size: 30px; bottom: 20px; left: 20px; }
             
