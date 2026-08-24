@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Produtos | Sabor Autêntico - Salgados Artesanais</title>
+    <title>Catálogo Completo | Sabor Autêntico - Salgados Artesanais</title>
     
     <!-- Meta tags para o WhatsApp -->
-    <meta property="og:title" content="Nossos Produtos | Sabor Autêntico">
-    <meta property="og:description" content="Confira nosso cardápio completo de salgados fritos, assados, folhados e especiais. Encomende já!">
+    <meta property="og:title" content="Catálogo Completo | Sabor Autêntico">
+    <meta property="og:description" content="Confira nosso catálogo completo de salgados artesanais e congelados para padarias, lanchonetes e comércio. Entregas no ABCD!">
     <meta property="og:image" content="https://sabor-autentico.vercel.app/logotiposaborautentico.png">
     <meta property="og:url" content="https://sabor-autentico.vercel.app/produtos.html">
     <meta property="og:type" content="website">
@@ -19,213 +19,247 @@
             --primary-hover: #7b231b;
             --accent: #d4af37;
             --dark: #2c3e50;
-            --light: #f9f9f9;
+            --light: #f8f9fa;
             --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--white); color: var(--dark); line-height: 1.6; }
 
         /* Barra Superior */
-        .top-bar { background-color: var(--primary); color: var(--white); text-align: center; padding: 8px 15px; font-size: 0.85rem; font-weight: 500; }
+        .top-bar { background-color: var(--primary); color: var(--white); text-align: center; padding: 10px 15px; font-size: 0.85rem; font-weight: 500; }
 
-        /* Cabeçalho Principal */
-        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        /* Cabeçalho Profissional com Logotipo e Nome Bem Visíveis */
+        header { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo-container img { height: 65px; width: auto; object-fit: contain; }
+        
+        .logo-brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-container img { 
+            height: 110px; 
+            width: auto; 
+            object-fit: contain; 
+            transition: transform 0.3s ease; 
+        }
+
+        .logo-brand-wrapper:hover .logo-container img { transform: scale(1.03); }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .brand-subtitle {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
         nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }
-        nav a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
-        nav a:hover { color: var(--accent); }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: 0.3s; position: relative; }
+        nav a:hover { color: var(--primary); }
+        nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--accent); transition: width 0.3s ease; }
+        nav a:hover::after { width: 100%; }
 
-        /* Títulos */
-        .section-title { text-align: center; font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 60px 0 10px 0; text-transform: uppercase; letter-spacing: 1px; }
-        .section-title span { color: var(--accent); }
-        .divider { width: 80px; height: 3px; background-color: var(--primary); margin: 0 auto 60px auto; }
+        .nav-whatsapp { background-color: #25d366 !important; color: var(--white) !important; padding: 10px 20px; border-radius: 50px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: 0.3s !important; }
+        .nav-whatsapp:hover { background-color: #1ebe5d !important; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4); }
+        .nav-whatsapp::after { display: none !important; }
 
-        /* Grade de Produtos */
-        .products-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px 20px; }
+        /* Banner da Página de Catálogo */
+        .catalog-hero { background: linear-gradient(135deg, var(--primary) 0%, #6d1f18 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .catalog-hero h1 { font-size: 2.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+        .catalog-hero p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* Seção de Produtos */
+        .products-section { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        
+        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.06); transition: all 0.3s ease; display: flex; flex-direction: column; border: 1px solid #eaeaea; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+        .product-img { width: 100%; height: 230px; object-fit: cover; border-bottom: 3px solid var(--primary); }
+        .product-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-content h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; color: var(--dark); }
+        .product-content p { color: #666; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.7; }
+        
+        .btn-order { background-color: #25d366; color: var(--white); padding: 12px 0; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: auto; width: 100%; }
+        .btn-order:hover { background-color: #128c7e; transform: translateY(-1px); }
 
-        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        /* Botão Flutuante WhatsApp */
+        .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); z-index: 9999; transition: all 0.3s ease; text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
 
-        .product-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 3px solid var(--primary); }
+        /* Rodapé Corrigido com Logotipo Visível */
+        footer { background-color: #1a252f; color: var(--white); padding: 60px 20px 25px 20px; text-align: center; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; }
+        
+        .footer-logo-container {
+            background-color: var(--white);
+            padding: 12px 28px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
 
-        .product-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .product-info h3 { font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; text-transform: uppercase; }
-        .product-info p { color: #666; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; flex-grow: 1; }
+        .footer-logo img { 
+            height: 75px; 
+            width: auto; 
+            object-fit: contain; 
+        }
 
-        .product-footer { margin-top: auto; border-top: 1px solid #eee; padding-top: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .price { font-size: 1.2rem; font-weight: 800; color: var(--accent); }
-        .btn-order { background-color: #25d366; color: var(--white); padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 6px;}
-        .btn-order:hover { background-color: #128c7e; transform: translateY(-2px); }
-
-        /* Rodapé */
-        footer { background-color: #1a252f; color: var(--white); padding: 50px 20px 20px 20px; text-align: center; margin-top: auto; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .footer-logo img { height: 50px; filter: brightness(0) invert(1); }
-        .footer-bottom { padding-top: 20px; font-size: 0.85rem; color: #7f8c8d; }
+        .footer-info { font-size: 0.95rem; color: #bdc3c7; line-height: 1.8; }
+        .footer-bottom { padding-top: 25px; font-size: 0.85rem; color: #7f8c8d; }
 
         /* Responsivo */
         @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
+            .catalog-hero h1 { font-size: 2.1rem; }
+            nav ul { display: none; }
+            .logo-container img { height: 75px; }
+            .brand-title { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- Topo com Contatos -->
     <div class="top-bar">
-        📧 contato@saborautentico.com.br | 📱 WhatsApp: (11) 92005-8017
+        📧 contato@saborautentico.com.br | 📱 WhatsApp & Vendas: (11) 92005-8017 | 🚚 Entregas em todo ABCD da Grande São Paulo
     </div>
 
-    <!-- Header -->
+    <!-- Cabeçalho Profissional -->
     <header>
         <div class="header-container">
-            <div class="logo-container">
-                <img src="logotiposaborautentico.png" alt="Sabor Autêntico Logo">
-            </div>
+            <a href="index.html" class="logo-brand-wrapper">
+                <div class="logo-container">
+                    <img src="logotiposaborautentico.png" alt="Sabor Autêntico Logo">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">Sabor Autêntico</span>
+                    <span class="brand-subtitle">Salgados Artesanais</span>
+                </div>
+            </a>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#sobre">Sobre</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" style="color: #25d366;">WhatsApp</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#produtos">Destaques</a></li>
+                    <li><a href="index.html#sobre">Sobre Nós</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                    <li><a href="produtos.html" style="color: var(--primary);">Catálogo Completo</a></li>
+                    <li><a href="https://wa.me/5511920058017?text=Olá!%20Vim%20pelo%20catálogo%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" class="nav-whatsapp">💬 WhatsApp</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Título da Página -->
-    <h2 class="section-title">Nosso <span>Cardápio</span></h2>
-    <div class="divider"></div>
+    <!-- Banner do Catálogo -->
+    <section class="catalog-hero">
+        <h1>Catálogo Completo de Salgados</h1>
+        <p>Qualidade superior e recheios generosos para o seu comércio ou evento</p>
+    </section>
 
-    <!-- Grade de Produtos -->
-    <div class="products-container">
+    <!-- Grade de Produtos Completa -->
+    <section class="products-section">
         <div class="products-grid">
-
-            <!-- Produto 1: Coxinha de Carne Seca -->
+            
+            <!-- Coxinha de Carne Seca com Requeijão -->
             <div class="product-card">
                 <img src="Coxinha-Carne-Seca-com-Requeijao.jpg" alt="Coxinha de Carne Seca com Requeijão" class="product-img">
-                <div class="product-info">
+                <div class="product-content">
                     <h3>Coxinha de Carne Seca</h3>
-                    <p>Massa crocante e saborosa recheada com carne seca desfiada de primeira qualidade e um toque cremoso de requeijão.</p>
-                    <div class="product-footer">
-                        <span class="price">Consulte</span>
-                        <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20encomendar%20a%20Coxinha%20de%20Carne%20Seca." class="btn-order" target="_blank">
-                            💬 Encomendar
-                        </a>
-                    </div>
+                    <p>Massa crocante e saborosa, recheada com carne seca desfiada de primeira qualidade e um toque cremoso de requeijão.</p>
+                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20a%20Coxinha%20de%20Carne%20Seca." class="btn-order" target="_blank">
+                        💬 Pedir via WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- Produto 2: Bolinho de Queijo -->
+            <!-- Bolinho de Queijo -->
             <div class="product-card">
                 <img src="Bolinho-de-Queijo.jpg" alt="Bolinho de Queijo" class="product-img">
-                <div class="product-info">
+                <div class="product-content">
                     <h3>Bolinho de Queijo</h3>
-                    <p>O clássico que não pode faltar! Massa dourada e crocante com recheio generoso de queijo derretido.</p>
-                    <div class="product-footer">
-                        <span class="price">Consulte</span>
-                        <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20encomendar%20o%20Bolinho%20de%20Queijo." class="btn-order" target="_blank">
-                            💬 Encomendar
-                        </a>
-                    </div>
+                    <p>O clássico irresistível! Massa dourada e crocante com recheio generoso de queijo derretido de excelente procedência.</p>
+                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20o%20Bolinho%20de%20Queijo." class="btn-order" target="_blank">
+                        💬 Pedir via WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- Produto 3: Bolinho de Carne -->
+            <!-- Bolinho de Carne -->
             <div class="product-card">
                 <img src="BOLINHO-DE-CARNE.jpg" alt="Bolinho de Carne" class="product-img">
-                <div class="product-info">
+                <div class="product-content">
                     <h3>Bolinho de Carne</h3>
-                    <p>Sabor caseiro inconfundível. Bolinho de carne temperado com especiarias frescas, frito na hora para garantir a crocância.</p>
-                    <div class="product-footer">
-                        <span class="price">Consulte</span>
-                        <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20encomendar%20o%20Bolinho%20de%20Carne." class="btn-order" target="_blank">
-                            💬 Encomendar
-                        </a>
-                    </div>
+                    <p>Sabor caseiro inconfundível. Temperado na medida certa com especiarias frescas e carne selecionada.</p>
+                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20o%20Bolinho%20de%20Carne." class="btn-order" target="_blank">
+                        💬 Pedir via WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- Produto 4: Bauru de Calabresa -->
+            <!-- Bauru de Calabresa -->
             <div class="product-card">
                 <img src="Bauru-de-Calabresa.jpg" alt="Bauru de Calabresa" class="product-img">
-                <div class="product-info">
+                <div class="product-content">
                     <h3>Bauru de Calabresa</h3>
-                    <p>Nosso delicioso Bauru com recheio farto de calabresa moída, queijo derretido e tomate fresco.</p>
-                    <div class="product-footer">
-                        <span class="price">Consulte</span>
-                        <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20encomendar%20o%20Bauru%20de%20Calabresa." class="btn-order" target="_blank">
-                            💬 Encomendar
-                        </a>
-                    </div>
+                    <p>Perfeito para balcão de padarias e lanchonetes. Recheio saboroso de calabresa defumada com queijo.</p>
+                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20o%20Bauru%20de%20Calabresa." class="btn-order" target="_blank">
+                        💬 Pedir via WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- Produto 5: Esfiha de Frango -->
+            <!-- Mini Hambúrguer de Cheddar -->
             <div class="product-card">
-                <img src="Esfiha-de-Frango.jpg" alt="Esfiha de Frango" class="product-img">
-                <div class="product-info">
-                    <h3>Esfiha de Frango</h3>
-                    <p>Massa fofinha e assada no ponto certo, com recheio suculento de frango desfiado e tempero especial Sabor Autêntico.</p>
-                    <div class="product-footer">
-                        <span class="price">Consulte</span>
-                        <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20encomendar%20as%20Esfihas%20de%20Frango." class="btn-order" target="_blank">
-                            💬 Encomendar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Produto 6: Croissant de Frango -->
-            <div class="product-card">
-                <img src="Croissant-Frango.jpg" alt="Croissant de Frango" class="product-img">
-                <div class="product-info">
-                    <h3>Croissant de Frango</h3>
-                    <p>Massa folhada e amanteigada, recheada com frango cremoso. Uma opção sofisticada e deliciosa para seu evento.</p>
-                    <div class="product-footer">
-                        <span class="price">Consulte</span>
-                        <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20encomendar%20os%20Croissants%20de%20Frango." class="btn-order" target="_blank">
-                            💬 Encomendar
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Produto 7: Hamburguer de Cheddar -->
-            <div class="product-card">
-                <img src="Hamburguer-de-cheddar.jpg" alt="Mini Hambúrguer de Cheddar" class="product-img">
-                <div class="product-info">
+                <img src="Mini-hamburguer-de-cheddar.jpg" alt="Mini Hambúrguer de Cheddar" class="product-img">
+                <div class="product-content">
                     <h3>Mini Hambúrguer de Cheddar</h3>
-                    <p>Sucesso absoluto nas festas! Mini pão fofinho, carne bovina selecionada e muito creme de cheddar.</p>
-                    <div class="product-footer">
-                        <span class="price">Consulte</span>
-                        <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20encomendar%20os%20Mini%20Hambúrgueres%20de%20Cheddar." class="btn-order" target="_blank">
-                            💬 Encomendar
-                        </a>
-                    </div>
+                    <p>Sucesso absoluto! Mini pão fofinho, carne bovina selecionada e muito creme de cheddar cremoso.</p>
+                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20o%20Mini%20Hambúrguer%20de%20Cheddar." class="btn-order" target="_blank">
+                        💬 Pedir via WhatsApp
+                    </a>
                 </div>
             </div>
 
         </div>
-    </div>
+    </section>
 
-    <!-- Rodapé -->
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511920058017?text=Olá!%20Vim%20pelo%20catálogo%20e%20quero%20fazer%20um%20pedido." class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        💬
+    </a>
+
+    <!-- Rodapé Corrigido -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">
-                <img src="logotiposaborautentico.png" alt="Sabor Autêntico">
+            <div class="footer-logo-container">
+                <div class="footer-logo">
+                    <img src="logotiposaborautentico.png" alt="Sabor Autêntico">
+                </div>
             </div>
             <div class="footer-info">
-                <p><strong>Sabor Autêntico - Salgados Artesanais</strong></p>
+                <p><strong>Sabor Autêntico - Salgados Artesanais e Distribuição</strong></p>
                 <p>Telefone / WhatsApp: (11) 92005-8017 | E-mail: contato@saborautentico.com.br</p>
+                <p>Atendimento e Entregas em todo o ABCD da Grande São Paulo (Santo André, São Bernardo do Campo, São Caetano do Sul e Diadema).</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Sabor Autêntico. Todos os direitos reservados. | Orgulhosamente desenvolvido por Sabor Autêntico</p>
+            <p>&copy; 2026 Sabor Autêntico. Todos os direitos reservados. | Orgulhosamente desenvolvido para Sabor Autêntico</p>
         </div>
     </footer>
 
