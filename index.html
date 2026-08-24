@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabor Autêntico | Salgados Artesanais e Congelados para Atacado e Varejo</title>
+    <title>Sabor Autêntico - Salgados Artesanais e Congelados</title>
     
-    <!-- Meta tags para o WhatsApp -->
-    <meta property="og:title" content="Sabor Autêntico | Salgados Artesanais e Distribuição no ABCD">
-    <meta property="og:description" content="Distribuição de salgados artesanais e congelados para padarias, lanchonetes e comércio. Entregas em todo ABCD da Grande São Paulo!">
-    <meta property="og:image" content="https://sabor-autentico.vercel.app/logotiposaborautentico.png">
+    <!-- Meta tags otimizadas para o WhatsApp com a foto da Coxinha -->
+    <meta property="og:title" content="Sabor Autêntico - Salgados Artesanais">
+    <meta property="og:description" content="Confira nossos salgados artesanais e congelados de alta qualidade para padarias, lanchonetes e comércio. Entregas em todo o ABCD!">
+    <meta property="og:image" content="https://sabor-autentico.vercel.app/Coxinha-Carne-Seca-com-Requeijao.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://sabor-autentico.vercel.app/">
     <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sabor Autêntico - Salgados Artesanais">
+    <meta name="twitter:description" content="Salgados congelados e artesanais para o seu comércio. Entregas no ABCD!">
+    <meta name="twitter:image" content="https://sabor-autentico.vercel.app/Coxinha-Carne-Seca-com-Requeijao.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #962d22; /* Vermelho escuro corporativo */
+            --primary: #962d22;
             --primary-hover: #7b231b;
-            --accent: #d4af37; /* Dourado elegante */
+            --accent: #d4af37;
             --dark: #2c3e50;
             --light: #f8f9fa;
             --white: #ffffff;
@@ -29,47 +38,17 @@
         /* Barra Superior */
         .top-bar { background-color: var(--primary); color: var(--white); text-align: center; padding: 10px 15px; font-size: 0.85rem; font-weight: 500; }
 
-        /* Cabeçalho Profissional com Logotipo e Nome Bem Visíveis */
+        /* Cabeçalho */
         header { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         
-        .logo-brand-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-
-        .logo-container img { 
-            height: 110px; /* Logotipo maior e em destaque no topo */
-            width: auto; 
-            object-fit: contain; 
-            transition: transform 0.3s ease; 
-        }
-
+        .logo-brand-wrapper { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-container img { height: 110px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
         .logo-brand-wrapper:hover .logo-container img { transform: scale(1.03); }
 
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            line-height: 1.1;
-        }
-
-        .brand-subtitle {
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--accent);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-title { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: 0.5px; text-transform: uppercase; line-height: 1.1; }
+        .brand-subtitle { font-size: 0.82rem; font-weight: 600; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
         
         nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }
         nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: 0.3s; position: relative; }
@@ -81,91 +60,55 @@
         .nav-whatsapp:hover { background-color: #1ebe5d !important; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4); }
         .nav-whatsapp::after { display: none !important; }
 
-        /* Seção Hero Focada no Produto e Distribuição */
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, #6d1f18 100%); color: var(--white); padding: 80px 20px; text-align: center; }
-        .hero-content { max-width: 900px; margin: 0 auto; }
-        .hero-tag { display: inline-block; background-color: rgba(212, 175, 55, 0.2); color: var(--accent); border: 1px solid var(--accent); padding: 6px 16px; border-radius: 30px; font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
-        .hero-text h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; text-transform: uppercase; }
-        .hero-text p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.95; line-height: 1.7; }
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #6d1f18 100%); color: var(--white); padding: 90px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px auto; opacity: 0.95; }
         
         .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn-main { display: inline-block; background: var(--accent); color: var(--white); padding: 16px 35px; border-radius: 6px; font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); transition: all 0.3s ease; border: 2px solid var(--accent); }
-        .btn-main:hover { background: #b8972e; border-color: #b8972e; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6); }
+        .btn-primary { background-color: var(--accent); color: var(--dark); padding: 14px 30px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn-primary:hover { background-color: #e5be3b; transform: translateY(-2px); }
+        .btn-secondary { background-color: #25d366; color: var(--white); padding: 14px 30px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-secondary:hover { background-color: #128c7e; transform: translateY(-2px); }
 
-        .btn-outline { display: inline-block; background: transparent; color: var(--white); padding: 16px 35px; border-radius: 6px; font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; border: 2px solid var(--white); transition: all 0.3s ease; }
-        .btn-outline:hover { background: var(--white); color: var(--primary); transform: translateY(-3px); }
+        /* Destaques Section */
+        .highlights { max-width: 1200px; margin: 0 auto; padding: 70px 20px; text-align: center; }
+        .highlights h2 { font-size: 2.2rem; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 10px; }
+        .highlights > p { color: #666; margin-bottom: 40px; font-size: 1.05rem; }
+        
+        .grid-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left; }
+        .card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.06); border: 1px solid #eaeaea; display: flex; flex-direction: column; }
+        .card img { width: 100%; height: 230px; object-fit: cover; border-bottom: 3px solid var(--primary); }
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; color: var(--dark); }
+        .card-body p { color: #666; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
 
-        /* Seção de Diferenciais / Distribuição ABCD */
-        .features-section { padding: 70px 20px; background-color: var(--light); }
-        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); transition: transform 0.3s ease; }
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; text-transform: uppercase; }
-        .feature-card p { color: #555; font-size: 0.95rem; line-height: 1.7; }
+        .center-btn { margin-top: 50px; }
 
-        /* Galeria de Produtos */
-        .section-title { text-align: center; font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 70px 0 10px 0; text-transform: uppercase; }
-        .section-subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px; }
-        .divider { width: 90px; height: 4px; background-color: var(--accent); margin: 0 auto 50px auto; border-radius: 2px; }
-        .products-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 70px 20px; }
-
-        .products-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .product-item { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.06); transition: all 0.3s ease; display: flex; flex-direction: column; border: 1px solid #eaeaea; }
-        .product-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
-        .product-img { width: 100%; height: 230px; object-fit: cover; border-bottom: 3px solid var(--primary); }
-        .product-details { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .product-details h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; color: var(--dark); }
-        .product-details p { color: #666; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.7; }
-        .btn-order { background-color: #25d366; color: var(--white); padding: 12px 0; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: auto; width: 100%; }
-        .btn-order:hover { background-color: #128c7e; transform: translateY(-1px); }
-
-        /* Sobre Nós Autêntico */
-        .about-section { background-color: var(--white); padding: 90px 20px; border-top: 1px solid #eaeaea; }
-        .about-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .about-text h2 { font-size: 2.4rem; font-weight: 800; margin-bottom: 20px; color: var(--primary); text-transform: uppercase; line-height: 1.2; }
-        .about-text p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; color: #555; }
-        .about-image { text-align: center; }
-        .about-image img { max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-
-        /* Seção Fale Conosco */
-        .cta-contact-section { background: linear-gradient(135deg, var(--primary) 0%, #6d1f18 100%); color: var(--white); padding: 70px 20px; text-align: center; }
-        .cta-contact-content { max-width: 800px; margin: 0 auto; }
-        .cta-contact-content h2 { font-size: 2.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; letter-spacing: -0.5px; }
-        .cta-contact-content p { font-size: 1.15rem; margin-bottom: 30px; opacity: 0.95; }
+        /* Sobre Nós */
+        .about { background-color: var(--light); padding: 80px 20px; text-align: center; }
+        .about-container { max-width: 800px; margin: 0 auto; }
+        .about h2 { font-size: 2.2rem; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 20px; }
+        .about p { font-size: 1.05rem; color: #555; line-height: 1.8; margin-bottom: 15px; }
 
         /* Botão Flutuante WhatsApp */
         .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); z-index: 9999; transition: all 0.3s ease; text-decoration: none; }
         .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
 
-        /* Rodapé Corrigido com Logotipo Visível */
+        /* Rodapé */
         footer { background-color: #1a252f; color: var(--white); padding: 60px 20px 25px 20px; text-align: center; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; }
-        
-        .footer-logo-container {
-            background-color: var(--white);
-            padding: 12px 28px;
-            border-radius: 12px;
-            display: inline-block;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .footer-logo img { 
-            height: 75px; 
-            width: auto; 
-            object-fit: contain; 
-        }
-
+        .footer-logo-container { background-color: var(--white); padding: 12px 28px; border-radius: 12px; display: inline-block; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .footer-logo img { height: 75px; width: auto; object-fit: contain; }
         .footer-info { font-size: 0.95rem; color: #bdc3c7; line-height: 1.8; }
         .footer-bottom { padding-top: 25px; font-size: 0.85rem; color: #7f8c8d; }
 
         /* Responsivo */
         @media (max-width: 768px) {
-            .hero-text h1 { font-size: 2.3rem; }
-            .about-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.1rem; }
             nav ul { display: none; }
             .logo-container img { height: 75px; }
             .brand-title { font-size: 1.2rem; }
-            .cta-contact-content h2 { font-size: 2.1rem; }
         }
     </style>
 </head>
@@ -176,7 +119,7 @@
         📧 contato@saborautentico.com.br | 📱 WhatsApp & Vendas: (11) 92005-8017 | 🚚 Entregas em todo ABCD da Grande São Paulo
     </div>
 
-    <!-- Cabeçalho Profissional com Logotipo Maior e Nome Visível -->
+    <!-- Cabeçalho -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo-brand-wrapper">
@@ -191,9 +134,8 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#produtos">Destaques</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
                     <li><a href="produtos.html">Catálogo Completo</a></li>
                     <li><a href="https://wa.me/5511920058017?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" class="nav-whatsapp">💬 WhatsApp</a></li>
                 </ul>
@@ -201,131 +143,75 @@
         </div>
     </header>
 
-    <!-- Seção Hero -->
+    <!-- Banner Principal -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">Distribuição para Padarias, Lanchonetes e Comércio</span>
-            <div class="hero-text">
-                <h1>Salgados Artesanais de Excelência para o seu Estabelecimento</h1>
-                <p>Qualidade inconfundível, crocância e recheios generosos. Entregas rápidas e eficientes em todo o <strong>ABCD da Grande São Paulo</strong>!</p>
-                <div class="hero-buttons">
-                    <a href="produtos.html" class="btn-main">Ver Catálogo Completo &rarr;</a>
-                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20solicitar%20uma%20tabela%20de%20preços%20para%20revenda." target="_blank" class="btn-outline">Falar com Consultor</a>
-                </div>
-            </div>
+        <h1>Salgados Artesanais de Alta Qualidade</h1>
+        <p>Recheios generosos e massa crocante para padarias, lanchonetes, comércios e eventos em todo o ABCD!</p>
+        <div class="hero-buttons">
+            <a href="produtos.html" class="btn-primary">Ver Catálogo Completo →</a>
+            <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20sobre%20os%20salgados." class="btn-secondary" target="_blank">💬 Falar com Consultor</a>
         </div>
     </section>
 
-    <!-- Seção de Diferenciais & Distribuição ABCD -->
-    <div class="features-section">
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>🚚 Entregas em Todo o ABCD</h3>
-                <p>Logística própria e pontual atendendo Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e região com total segurança e conservação.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🥖 Foco no Comércio (B2B)</h3>
-                <p>Parceiro ideal para padarias, lanchonetes, cantinas, buffets e mercados que buscam padronização, excelente margem de lucro e alta rotatividade.</p>
-            </div>
-            <div class="feature-card">
-                <h3>⭐ Padrão Artesanal Superior</h3>
-                <p>Massa leve, sequinha e recheios fartos selecionados com rigorosos padrões de qualidade e higiene para fidelizar seus clientes.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Galeria de Produtos em Destaque -->
-    <div id="produtos" class="products-container">
-        <h2 class="section-title">Nossos <span>Destaques</span></h2>
-        <p class="section-subtitle">Conheça alguns dos produtos mais pedidos pelos nossos clientes e parceiros</p>
-        <div class="divider"></div>
-
-        <div class="products-gallery">
-            <!-- Produto 1 -->
-            <div class="product-item">
-                <img src="Coxinha-Carne-Seca-com-Requeijao.jpg" alt="Coxinha de Carne Seca com Requeijão" class="product-img">
-                <div class="product-details">
+    <!-- Seção de Destaques -->
+    <section class="highlights" id="produtos">
+        <h2>Produtos em Destaque</h2>
+        <p>Conheça alguns dos nossos sabores mais vendidos</p>
+        
+        <div class="grid-highlights">
+            
+            <!-- Coxinha -->
+            <div class="card">
+                <img src="Coxinha-Carne-Seca-com-Requeijao.jpg" alt="Coxinha de Carne Seca">
+                <div class="card-body">
                     <h3>Coxinha de Carne Seca</h3>
-                    <p>Massa crocante e saborosa, recheada com carne seca desfiada de primeira qualidade e um toque cremoso de requeijão.</p>
-                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20a%20Coxinha%20de%20Carne%20Seca." class="btn-order" target="_blank">
-                        💬 Pedir via WhatsApp
-                    </a>
+                    <p>Massa crocante e recheio farto de carne seca desfiada de primeira com toque cremoso de requeijão.</p>
+                    <a href="produtos.html" class="btn-primary" style="text-align: center; padding: 10px; font-size: 0.9rem;">Ver no Catálogo</a>
                 </div>
             </div>
 
-            <!-- Produto 2 -->
-            <div class="product-item">
-                <img src="Bolinho-de-Queijo.jpg" alt="Bolinho de Queijo" class="product-img">
-                <div class="product-details">
+            <!-- Bolinho de Queijo -->
+            <div class="card">
+                <img src="Bolinho-de-Queijo.jpg" alt="Bolinho de Queijo">
+                <div class="card-body">
                     <h3>Bolinho de Queijo</h3>
-                    <p>O clássico irresistível! Massa dourada e crocante com recheio generoso de queijo derretido de excelente procedência.</p>
-                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20o%20Bolinho%20de%20Queijo." class="btn-order" target="_blank">
-                        💬 Pedir via WhatsApp
-                    </a>
+                    <p>O clássico favorito das lanchonetes. Muito queijo derretido e massa sequinha e dourada.</p>
+                    <a href="produtos.html" class="btn-primary" style="text-align: center; padding: 10px; font-size: 0.9rem;">Ver no Catálogo</a>
                 </div>
             </div>
 
-            <!-- Produto 3 -->
-            <div class="product-item">
-                <img src="BOLINHO-DE-CARNE.jpg" alt="Bolinho de Carne" class="product-img">
-                <div class="product-details">
-                    <h3>Bolinho de Carne</h3>
-                    <p>Sabor caseiro inconfundível. Temperado na medida certa com especiarias frescas e carne selecionada.</p>
-                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20o%20Bolinho%20de%20Carne." class="btn-order" target="_blank">
-                        💬 Pedir via WhatsApp
-                    </a>
+            <!-- Hambúrguer de Cheddar -->
+            <div class="card">
+                <img src="Hamburguer-de-cheddar.jpg" alt="Hambúrguer de Cheddar">
+                <div class="card-body">
+                    <h3>Hambúrguer de Cheddar</h3>
+                    <p>Sucesso absoluto de vendas! Carne suculenta combinada com creme de cheddar cremoso.</p>
+                    <a href="produtos.html" class="btn-primary" style="text-align: center; padding: 10px; font-size: 0.9rem;">Ver no Catálogo</a>
                 </div>
             </div>
 
-            <!-- Produto 4 -->
-            <div class="product-item">
-                <img src="Bauru-de-Calabresa.jpg" alt="Bauru de Calabresa" class="product-img">
-                <div class="product-details">
-                    <h3>Bauru de Calabresa</h3>
-                    <p>Perfeito para balcão de padarias e lanchonetes. Recheio saboroso de calabresa defumada com queijo.</p>
-                    <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20orçamento%20para%20o%20Bauru%20de%20Calabresa." class="btn-order" target="_blank">
-                        💬 Pedir via WhatsApp
-                    </a>
-                </div>
-            </div>
         </div>
 
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="produtos.html" class="btn-main">Ver Catálogo Completo com Todos os Sabores &rarr;</a>
+        <div class="center-btn">
+            <a href="produtos.html" class="btn-primary" style="font-size: 1.1rem; padding: 15px 35px;">📦 Ver Todos os Salgados do Catálogo</a>
         </div>
-    </div>
+    </section>
 
-    <!-- Seção Sobre Nós Autêntica -->
-    <section id="sobre" class="about-section">
+    <!-- Sobre Nós -->
+    <section class="about" id="sobre">
         <div class="about-container">
-            <div class="about-text">
-                <h2>Sobre Nós: Tradição, Sabor e Parceria</h2>
-                <p>O <strong>Sabor Autêntico</strong> nasceu da paixão por produzir salgados artesanais genuínos, combinando receitas tradicionais com rigorosos padrões de controle de qualidade e higiene.</p>
-                <p>Mais do que produzir salgados deliciosos, somos especialistas em atender o comércio. Atuamos como parceiros estratégicos de <strong>padarias, lanchonetes, cantinas, mercadinhos e revendedores em todo o ABCD da Grande São Paulo</strong>, garantindo pontualidade nas entregas, produtos sempre fresquinhos e excelente margem de lucro para o seu negócio.</p>
-                <p>Nosso compromisso é entregar sabor incomparável em cada mordida, fortalecendo a parceria com cada cliente que confia na nossa marca.</p>
-                <a href="https://wa.me/5511920058017?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20a%20parceria%20comercial." class="btn-main" target="_blank" style="margin-top: 10px;">Seja um Revendedor Parceiro</a>
-            </div>
-            <div class="about-image">
-                <img src="logotiposaborautentico.png" alt="Sabor Autêntico - Sobre Nós" style="max-width: 280px; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15);">
-            </div>
+            <h2>Sobre a Sabor Autêntico</h2>
+            <p>Trabalhamos com dedicação na produção e distribuição de salgados artesanais e congelados, oferecendo praticidade e excelência para o seu negócio.</p>
+            <p>Atendemos padarias, lanchonetes e comércio em geral com entregas rápidas e eficientes em todo o <strong>ABCD da Grande São Paulo</strong> (Santo André, São Bernardo do Campo, São Caetano do Sul e Diadema).</p>
         </div>
     </section>
 
-    <!-- Seção Fale Conosco -->
-    <section id="contato" class="cta-contact-section">
-        <div class="cta-contact-content">
-            <h2>Dúvidas? Pedidos? Fale Conosco!</h2>
-            <p>Precisa de uma tabela especial para o seu comércio, quer fazer um pedido ou tirar dúvidas sobre nossas entregas no ABCD? Nossa equipe está pronta para atendê-lo imediatamente.</p>
-            <a href="https://wa.me/5511920058017?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20o%20atendimento." target="_blank" class="btn-main">Contato via WhatsApp &rarr;</a>
-        </div>
-    </section>
-
-    <!-- Botão Flutuante do WhatsApp -->
+    <!-- Botão Flutuante WhatsApp -->
     <a href="https://wa.me/5511920058017?text=Olá!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
         💬
     </a>
 
-    <!-- Rodapé Corrigido -->
+    <!-- Rodapé -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo-container">
@@ -336,7 +222,7 @@
             <div class="footer-info">
                 <p><strong>Sabor Autêntico - Salgados Artesanais e Distribuição</strong></p>
                 <p>Telefone / WhatsApp: (11) 92005-8017 | E-mail: contato@saborautentico.com.br</p>
-                <p>Atendimento e Entregas em todo o ABCD da Grande São Paulo (Santo André, São Bernardo do Campo, São Caetano do Sul e Diadema).</p>
+                <p>Atendimento e Entregas em todo o ABCD da Grande São Paulo.</p>
             </div>
         </div>
         <div class="footer-bottom">
